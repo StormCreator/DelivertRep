@@ -1,0 +1,39 @@
+.header
+    padding: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__navigation
+        nav
+            ul
+                display: flex
+                list-style-type: none
+                padding: 0
+                margin-bottom: 0
+                li
+                    border-right: 2px dotted grey
+                    a
+                        display: block
+                        padding: 7px
+                        color: #ffffff
+                        font-size: 15px
+                        font-weight: 400
+                        line-height: 16.71px
+                        transition: .5s all
+                        &:hover
+                            color: $main-color
+                    &:last-child
+                        border-right: none
+    &__contacts
+        color: #ffffff
+        font-size: 14px
+        font-weight: 300
+        line-height: 24px
+    &__phone
+        color: #ffffff
+        font-size: 19px
+        font-weight: 700
+        &:hover
+            color: #fff
+    
+                
