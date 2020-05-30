@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <section class="promo">
+    <section class="promo" id="up">
         <div class="container">
             <div class="row">
                 <header class="header col-md-12">
@@ -18,7 +18,7 @@
                     <div class="header__navigation">
                         <nav>
                             <ul>
-                                <li><a href="#">Преимущества</a></li>
+                                <li><a href="#adventage">Преимущества</a></li>
                                 <li><a href="#">Наша работа</a></li>
                                 <li><a href="#">Цены</a></li>
                                 <li><a href="#">Схема работы</a></li>
@@ -32,7 +32,7 @@
                         <a href="tel:+79264230100" class="header__phone">+7 (926) 423 01 00</a>
                     </div>
                     <div class="header__btn">
-                        <button class="button">
+                        <button class="button" data-modal="call-me">
                             Перезвоните мне
                         </button>
                     </div>
@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <section class="advantages">
+    <section class="advantages" id="adventage">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 title">Преимущества работы с GlobalOpt</div>
@@ -399,6 +399,27 @@
             </div>
         </div>
     </footer>
+
+    <div class="overlay">
+        <div class="modal" id="call_me">
+            <div class="modal__close">&times;</div>
+            <div class="modal__title">
+                Мы перезвоним Вам в течении минуты!
+            </div>
+            <form action="#" class="modal__form">
+                <input placeholder="Ваш телефон..." name="phone">
+                <button class="button button_submit">Перезвонить</button>
+            </form>
+        </div>
+
+        <div class="modal modal__thanks" id="thanks">
+            <div class="modal__title thanks-title">
+                Мы перезвоним Вам в течении минуты!
+            </div>
+        </div>
+    </div>
+
+    <a href="#up" class="pageup"><img src="icons/chevron-circle-up-solid.svg" alt="up"></a>
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

@@ -16,4 +16,44 @@ $(document).ready(function(){
 
     ]
   });
+
+  //scroll
+    $("a[href=#up]").click(function(){
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
+    });
+
+    //for pageup scrolling
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 1600){
+            $('.pageup').fadeIn();
+        }else
+            $('.pageup').fadeOut();
+    });
+
+    $('[data-modal=call-me]').on('click', function(){
+        $('.overlay, #call_me').fadeIn('slow');
+    });
+
+    //for closing modal
+    $('.modal__close').on('click', function() {
+        $('.overlay, #call_me, #thanks').fadeOut('slow');
+    });
+
+    $('form').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "../mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function(){
+            $(this).find("input").val("");
+            $('#call_me').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+            $('form').trigger('reset');
+        });
+
+        return false;
+    });
 });
