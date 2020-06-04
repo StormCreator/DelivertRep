@@ -32,14 +32,31 @@ $(document).ready(function(){
             $('.pageup').fadeOut();
     });
 
-    $('[data-modal=call-me]').on('click', function(){
-        $('.overlay, #call_me').fadeIn('slow');
+    //for modal closing
+    $('.modal__close').on('click', function(){
+        $('.overlay, #call-me, #thanks').fadeOut('slow');
     });
 
-    //for closing modal
-    $('.modal__close').on('click', function() {
-        $('.overlay, #call_me, #thanks').fadeOut('slow');
+    //for modal opening
+    $('[data-modal=call-me]').on('click', function(){
+        $('.overlay, #call-me').fadeIn('slow');
     });
+
+    //for card sliding
+    function toggleSlide(item)
+    {
+        $(item).each(function(i){
+            $(this).on('click', function(e){
+                e.preventDefault();
+                $('.price__item-content').eq(i).toggleClass('price__item-content-active');
+                $('.price__item-list').eq(i).toggleClass('price__item-list-active');
+            })
+        })
+    }
+
+    toggleSlide('.price__button');
+    toggleSlide('.button_back');
+
 
     $('form').submit(function(e){
         e.preventDefault();
@@ -56,4 +73,21 @@ $(document).ready(function(){
 
         return false;
     });
+    window.addEventListener('DOMContentLoaded', () => {
+        const menu = document.querySelector('.menu'),
+        menuItem = document.querySelectorAll('.menu_item'),
+        hamburger = document.querySelector('.hamburger');
+    
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('hamburger_active');
+            menu.classList.toggle('menu_active');
+        });
+    
+        menuItem.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.toggle('hamburger_active');
+                menu.classList.toggle('menu_active');
+            })
+        })
+    })
 });
