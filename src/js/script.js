@@ -4,17 +4,26 @@ $(document).ready(function(){
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/arrow_left.png"</button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icons/arrow_right.png"</button>',
         responsive: [
-        {
-            breakpoint: 768,
-            settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 3
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
             }
-        }
+            // {
+            //   breakpoint: 1008,
+            //   settings: {
+            //     slidesToShow: 1,
+            //     slidesToScroll: 1
+            //   }
+            // },
+            // {
+            //   breakpoint: 800,
+            //   settings: "unslick"
+            // }
 
-    ]
+          ]
   });
 
   //scroll
