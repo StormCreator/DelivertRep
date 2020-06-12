@@ -4,17 +4,26 @@ $(document).ready(function(){
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/arrow_left.png"</button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icons/arrow_right.png"</button>',
         responsive: [
-        {
-            breakpoint: 768,
-            settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 3
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
             }
-        }
+            // {
+            //   breakpoint: 1008,
+            //   settings: {
+            //     slidesToShow: 1,
+            //     slidesToScroll: 1
+            //   }
+            // },
+            // {
+            //   breakpoint: 800,
+            //   settings: "unslick"
+            // }
 
-    ]
+          ]
   });
 
   //scroll
@@ -32,14 +41,31 @@ $(document).ready(function(){
             $('.pageup').fadeOut();
     });
 
-    $('[data-modal=call-me]').on('click', function(){
-        $('.overlay, #call_me').fadeIn('slow');
+    //for modal closing
+    $('.modal__close').on('click', function(){
+        $('.overlay, #call-me, #thanks').fadeOut('slow');
     });
 
-    //for closing modal
-    $('.modal__close').on('click', function() {
-        $('.overlay, #call_me, #thanks').fadeOut('slow');
+    //for modal opening
+    $('[data-modal=call-me]').on('click', function(){
+        $('.overlay, #call-me').fadeIn('slow');
     });
+
+    //for card sliding
+    function toggleSlide(item)
+    {
+        $(item).each(function(i){
+            $(this).on('click', function(e){
+                e.preventDefault();
+                $('.price__item-content').eq(i).toggleClass('price__item-content-active');
+                $('.price__item-list').eq(i).toggleClass('price__item-list-active');
+            })
+        })
+    }
+
+    toggleSlide('.price__button');
+    toggleSlide('.button_back');
+
 
     $('form').submit(function(e){
         e.preventDefault();
@@ -56,22 +82,21 @@ $(document).ready(function(){
 
         return false;
     });
-});
-// navigation
-window.addEventListener('DOMContentLoaded', () => {
-    const menu = document.querySelector('.menu'),
-    menuItem = document.querySelectorAll('.menu_item'),
-    hamburger = document.querySelector('.hamburger');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('hamburger_active');
-        menu.classList.toggle('menu_active');
-    });
-
-    menuItem.forEach(item => {
-        item.addEventListener('click', () => {
+    window.addEventListener('DOMContentLoaded', () => {
+        const menu = document.querySelector('.menu'),
+        menuItem = document.querySelectorAll('.menu_item'),
+        hamburger = document.querySelector('.hamburger');
+    
+        hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('hamburger_active');
             menu.classList.toggle('menu_active');
+        });
+    
+        menuItem.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.toggle('hamburger_active');
+                menu.classList.toggle('menu_active');
+            })
         })
     })
-})
+});

@@ -1,5 +1,5 @@
 .price
-    min-height: 900px
+    min-height: 950px
     padding: 50px 0
     &__subtitle
         color: #2e2e2e
@@ -22,8 +22,35 @@
         text-transform: uppercase
     &__img
         display: block
+        width: 50px
+        height: 50px
         margin: 14px auto
     &__item
+        overflow: hidden
+        
+        &-wrap
+            display: flex
+            width: 200%
+            border: none
+        &-content
+            width: 50%
+            transform: translateX(-108%)
+            transition: 0.5s all
+            &-active
+                transform: translateX(0%)
+                border: 1px solid #e9e9e9
+        &-list
+            position: relative
+            width: 50%
+            transform: translateX(0%)
+            transition: 0.5s all
+            text-align: center
+            padding-top: 15px
+            ul
+                text-align: left
+            &-active
+                transform: translateX(-100%)
+                border: 1px solid #e9e9e9
         &_delivery
             text-align: center
             color: #2e2e2e
@@ -69,6 +96,8 @@
             padding-top: 60px
             padding-bottom: 50px
     &__consult
+        display: flex
+        
         &_title
             margin: 56px auto 70px auto
             color: #3a3a3a
@@ -90,17 +119,13 @@
                 border-radius: 100%
                 background-color: #fff
         &_input
-            display: flex
-            justify-content: space-around
             input
                 border: none
-                border: 1px solid grey
+                border: 1px solid #e9e9e9
                 margin-right: 5px
                 border-radius: 30px
                 padding: 18px 28px
         &_button
-            display: flex
-            justify-content: center
             position: absolute
             bottom: -13%
 
