@@ -100,4 +100,8 @@ $(document).ready(function(){
             })
         })
     })
+
+    $('.hamburger').on('click', function(){
+        $('.header__navigation').fadeIn('slow');
+    });
 });
