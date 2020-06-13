@@ -11,6 +11,7 @@ $(document).ready(function(){
                 slidesToScroll: 1
               }
             }
+            
             // {
             //   breakpoint: 1008,
             //   settings: {
