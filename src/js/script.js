@@ -12,18 +12,12 @@ $(document).ready(function(){
               }
             },
             
-            // {
-            //   breakpoint: 1008,
-            //   settings: {
-            //     slidesToShow: 1,
-            //     slidesToScroll: 1
-            //   }
-            // },
-            // {
-            //   breakpoint: 800,
-            //   settings: "unslick"
-            // }
-
+            {
+              breakpoint: 576,
+              settings: {
+                arrows: false
+              }
+            }
           ]
   });
 

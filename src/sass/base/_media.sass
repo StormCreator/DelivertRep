@@ -2,9 +2,13 @@
     .header__contacts
         display: none
     .promo__title
-        font-size: 62px
+        font-size: 60px
     .ourWork__text
         text-align: justify
+    .promo__text
+        font-size: 23px
+    .promo__subtitle
+        font-size: 37px
     .feed__form input
         width: 220px;
         height: 45px;
@@ -12,13 +16,17 @@
         top: -38%
     .price__consult_button
         bottom: -9%
+    .footer__question
+        padding: 0
+        a
+            font-size: 16px
 
 @media( max-width: 991px)
     .promo
         .promo__title
-            font-size: 47px
+            font-size: 45px
         .promo__text
-            font-size: 18px
+            font-size: 17px
         .promo__subtitle
             font-size: 27px
         .promo__item_title
@@ -31,8 +39,16 @@
                 font-size: 17px
 
             &__navigation
-                a
-                    font-size: 12px
+                nav
+                    ul
+                        li
+
+                            a
+                                font-size: 12px
+            &__btn
+                button
+                    width: 140px
+                    height: 45px
             .wrap-contacts
                 display: block
                 margin-left: 10px
@@ -149,24 +165,32 @@
     .feed
         .feed__form 
             input
-              
                 padding: 10px 14px
+                &:nth-child(3)
+                    margin-top: 10px
         .feed__form 
             textarea
                 padding: 8px 10px
     .footer
         .footer__question
-            display: none
+            width: 
             .question-ask
                 margin: 0
-            .button
-                margin: 10px auto 0
+        .footer__button
+            display: none
         .footer__divider
             margin: 16px auto
         .footer__site
             display: flex
+            align-items: center
+        .footer__question
+            padding: 0
+            a
+                font-size: 18px
         
 @media( max-width: 767px)
+    .promo .promo__subtitle
+        font-size: 25px
     .header__btn
         display: none
     .promo
@@ -251,15 +275,22 @@
             width: 90%
     .footer
         text-align: center
+    .footer__information
+        flex-direction: column
     .footer__button
         margin-top: 20px
     .footer__descr
         text-align: center
         margin-top: 15px
     .footer__polytic
-        margin: 15px auto
+        width: 100%
+        text-align: center
+        margin-top:  5px
     .footer__site
+        width: 100%
+        margin-top: 5px
         justify-content: center
+        text-align: center
 
 @media( max-width: 576px)
     .header__logo
