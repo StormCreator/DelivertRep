@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('.review__inner').slick({
-        // draggable: true,
+        draggable: true,
         prevArrow: '<button type="button" class="slick-prev"><img src="icons/arrow_left.png"</button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icons/arrow_right.png"</button>',
         responsive: [
@@ -12,14 +12,20 @@ $(document).ready(function(){
               }
             },
             
-            {
-              breakpoint: 576,
-              settings: {
-                arrows: false
-              }
-            }
+            // {
+            //   breakpoint: 1008,
+            //   settings: {
+            //     slidesToShow: 1,
+            //     slidesToScroll: 1
+            //   }
+            // },
+            // {
+            //   breakpoint: 800,
+            //   settings: "unslick"
+            // }
+
           ]
-  });
+    });
 
   //scroll
     $("a[href=#up]").click(function(){
@@ -28,6 +34,7 @@ $(document).ready(function(){
         return false;
     });
 
+ 
     //for pageup scrolling
     $(window).scroll(function(){
         if($(this).scrollTop() > 1600){

@@ -193,32 +193,58 @@
         font-size: 25px
     .header__btn
         display: none
-    .promo
-        .header
-            nav
-                display: none
-            .menu
-                position: fixed
-                flex-direction: column
-                justify-content: center
-                align-items: center
-                top: 0
-                left: -100%
-                width: 50%
-                height: 100vh
-                padding: 20px 15px
-                background-color: rgba(0, 0, 0, .8)
-                transition: 0.6s all
-            .menu_active
-                left: 0
-            .menu_item
-                padding-right: 0
-                border: none
-                margin-top: 10px
-                .menu_link
-                    font-size: 20px
-        .hamburger
+    .menu
+        position: fixed
+        z-index: 5
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        top: 0
+        left: -100%
+        width: 50%
+        height: 100vh
+        padding: 20px 15px
+        background-color: rgba(0, 0, 0, .8)
+        transition: 0.6s all
+    .menu_active
+        left: 0
+        .menu_item
+            transition: .3s all
+    .menu_item
+        padding-right: 0
+        border: none
+        margin-top: 10px
+          
+    .header__navigation nav ul li
+        border-right: none
+        width: 90%
+        text-align: center
+    .hamburger
+        display: block
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 26px
+        height: 12px
+        span
             display: block
+            height: 2px
+            width: 100%
+            background-color: #fff
+            margin-bottom: 2px
+            transition: 0.5s all
+    .hamburger_active
+        span
+            margin-bottom: -2px
+            &:nth-child(1)
+                transform: translateY(3px) rotate(-45deg)
+            &:nth-child(2)
+                display: none
+            &:nth-child(3)
+                transform: translateY(3px) rotate(45deg)
+            
+
     .promo .promo__title
         font-size: 40px
         text-align: center
@@ -311,6 +337,9 @@
     .price 
         .wrap_inputs 
             margin: 0 20px 0 20px
+        .price__consult_input 
+            input
+                width: 90%
     .slick-arrow
         display: none
 @media( max-width:320px)
